@@ -97,28 +97,8 @@ const deletePost = (postID, allPosts) => {
 // so we wrap the inner UI in its own component.
 function AppRoutes() {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [posts, setPosts] = useState([...samplePosts]);
-
-  // determines label based on the current path
-  const inPost = location.pathname.includes('/posts/');
-  const isEditing = location.pathname.includes('/postform');
-  // extract the numeric ID if so
-  const postId = inPost
-    ? Number(location.pathname.split('/').pop())
-    : null;
-
-  const buttonLabel = inPost ? 'Edit Post' : 'New Post';
-
-  const handleClick = () => {
-    if (inPost) {
-      // navigate and stash the postId in location.state
-      navigate('/postform', { state: { pageID: postId } });
-    } else {
-      navigate('/postform');
-    }
-  };
 
   const handleUpdate = (post, posts) => {
     console.log(posts);
@@ -138,13 +118,6 @@ function AppRoutes() {
   return (
     <Layout>
       <h1 className="title">Conor&apos;s Epic Blog</h1>
-      <div>
-        {isEditing ?
-        (<div></div>):
-        (<button className="editButton" onClick={handleClick}>
-          {buttonLabel}
-        </button>)}
-      </div>
 
       <Routes>
         <Route path="/" element={<BlogPostList posts={posts} />} />

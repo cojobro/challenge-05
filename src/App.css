@@ -1,11 +1,11 @@
 /* src/App.css */
 .container {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .title {
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: 15px;
   max-width: 80%;
   margin-left: auto;
@@ -34,7 +34,7 @@
 @media (min-width: 769px) {
   .title {
     font-size: 48px; /* Restore desktop title size */
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 30px;
   }
 
