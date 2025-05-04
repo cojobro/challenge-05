@@ -12,6 +12,7 @@ import {
 import BlogPostList from './components/BlogPostList';
 import BlogPostDetail from './components/BlogPostDetail';
 import BlogPostForm from './components/BlogPostForm';
+import Layout from './components/Layout';
 import { samplePosts } from './mockData';
 import './App.css';
 
@@ -135,7 +136,7 @@ function AppRoutes() {
 
 
   return (
-    <div className="App">
+    <Layout>
       <h1 className="title">Conor&apos;s Epic Blog</h1>
       <div>
         {isEditing ?
@@ -150,7 +151,7 @@ function AppRoutes() {
         <Route path="/posts/:postId" element={<PostDetailPlaceholder posts={posts}/>} />
         <Route path="/postform" element={<PostFormPlaceholder posts={posts} onSubmit={handleUpdate} onDelete={handleDelete}/>} />
       </Routes>
-    </div>
+    </Layout>
   );
 }
 

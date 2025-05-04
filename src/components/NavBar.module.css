@@ -1,0 +1,82 @@
+.navBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #003366;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger:focus {
+    outline: 2px solid #0066cc;
+}
+
+.mobileMenu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.mobileMenu a {
+    padding: 20px;
+    font-size: 18px;
+    color: #003366;
+    text-decoration: none;
+}
+
+  /* Desktop */
+@media (min-width: 1200px) {
+    .hamburger {
+        display: none;
+    }
+    .links {
+        display: flex;
+    }
+}
+
+  /* Tablet and Mobile */
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}

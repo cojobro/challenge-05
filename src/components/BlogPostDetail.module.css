@@ -44,6 +44,7 @@
 @media (min-width: 769px) {
     .blogPostDetail {
         padding: 40px;
+        min-width: 700px;
         max-width: 800px;
         margin-left: auto; /* Auto margins left/right center block elements */
         margin-right: auto;
